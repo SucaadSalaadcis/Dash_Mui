@@ -1,22 +1,25 @@
-import React, { useState } from 'react'
 
-import { AppBar, Avatar, Box, Drawer, List, ListItem, ListItemIcon, ListItemText, Paper, Toolbar, Typography } from '@mui/material'
+
+import React from 'react';
+import { Typography, Box, Grid, Paper, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+
 import { SubjectOutlined } from '@mui/icons-material';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import SupportAgentOutlinedIcon from '@mui/icons-material/SupportAgentOutlined';
 
-import { FaCartShopping } from "react-icons/fa6";
-import { GoHeartFill } from "react-icons/go";
-import { TbBellRinging } from "react-icons/tb";
 import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined';
 import MonetizationOnOutlinedIcon from '@mui/icons-material/MonetizationOnOutlined';
 import LowPriorityOutlinedIcon from '@mui/icons-material/LowPriorityOutlined';
 import GroupAddOutlinedIcon from '@mui/icons-material/GroupAddOutlined';
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 
-const drawerWidth = 240;
-const typographyWidth = 200
+import { FaCartShopping, } from 'react-icons/fa6';
+
+import { GoHeartFill } from 'react-icons/go';
+import { TbBellRinging } from 'react-icons/tb';
+
+
 
 export default function Sidenav({ children }) {
 
@@ -63,39 +66,28 @@ export default function Sidenav({ children }) {
     ]
 
     return (
-        <div style={{ display: 'flex' }}>
-            {/* app bar */}
-            <AppBar
-                sx={{ width: `calc(100% - ${typographyWidth}px)`, backgroundColor: 'white', color: 'black' }}
-            // elevation={0} // is the shadow
 
+        <Grid container style={{ height: '100vh', backgroundColor: 'linear-gradient(135deg, #e0f7fa, #e3f2fd)' }}>
+            {/* Left Section */}
+            <Grid item xs={12} md={2}
+                style={{
+                    height: '108%',
+                    boxShadow: '2px 5px 5px black',
+                    background: 'white'
+                    
+                }}
             >
 
-                <Toolbar>
-                    <Typography sx={{ flexGrow: '1' }}> Today is the </Typography>
-                    <Typography> Mario</Typography>
-                    <Avatar sx={{ marginLeft: '8px' }} src='https://i0.wp.com/play.co.rs/wp-content/uploads/2023/06/Super-Mario-RPG-Remake.jpg?resize=1000%2C600&ssl=1' />
-                </Toolbar>
 
-            </AppBar>
-
-            {/* side drawer */}
-            <Drawer
-                sx={{ width: drawerWidth }}
-                variant='permanent'
-                anchor='left'
-            >
-
-                <div style={{ width: typographyWidth, marginTop: '20px' }}>
-
-                    <Typography variant='p' style={{ fontSize: '20px', paddingLeft: '16px', marginTop: '100px' }} > Commission System </Typography>
-                    <Paper style={{ width: '60px', height: '60px', marginLeft: '60px', marginTop: '20px', bordr: '3px solid black' }}>
+                <div>
+                    <div variant='p' style={{ fontSize: '20px', paddingLeft: '20px', paddingTop: '20px' }} > Commission System </div>
+                    <Paper style={{ width: '60px', height: '60px', marginLeft: '85px', marginTop: '20px', bordr: '3px solid black' }}>
                         {/* <Avatar sx={{ marginLeft: '8px', paddingTop: '1px' }} src='https://img.freepik.com/free-photo/international-medical-student-man-blue-uniform-doctor-with-stethoscope_1157-43732.jpg?ga=GA1.1.1454211261.1724652688&semt=ais_hybrid' /> */}
                         <img style={{ width: '40px', height: '50px', margin: '5px 0px 0px 10px' }} src="https://img.freepik.com/free-photo/international-medical-student-man-blue-uniform-doctor-with-stethoscope_1157-43732.jpg?ga=GA1.1.1454211261.1724652688&semt=ais_hybrid" alt="" />
                     </Paper>
-                    <Typography variant='h6' style={{ margin: '10px 0px 0px 40px' }}>Jama Abdi </Typography>
-                    <Typography color='text.secondary' variant='p' style={{ margin: '10px 0px 0px 55px', }}>@Abdi </Typography>
-                    <Box style={{ margin: '20px 0px 0px 32px', color: 'blue', gap: '28px', display: 'flex', fontSize: '25px' }}>
+                    <Typography variant='h6' style={{ margin: '10px 0px 0px 70px' }}>Jama Abdi </Typography>
+                    <Typography color='text.secondary' variant='h6' style={{ margin: '1px 0px 0px 80px', }}>@Abdi </Typography>
+                    <Box style={{ margin: '20px 0px 0px 48px', color: 'blue', gap: '28px', display: 'flex', fontSize: '25px' }}>
                         <FaCartShopping />
                         <GoHeartFill />
                         <TbBellRinging />
@@ -104,12 +96,13 @@ export default function Sidenav({ children }) {
                 </div>
 
 
+
                 {/*list / links  */}
-                <List style={{ marginTop: '2px' }}>
+                <List>
                     {
-                        
+
                         menuItem.map(item => (
-                        //   { item.path == 'users' ? <hr/> : ''}
+                            //   { item.path == 'users' ? <hr/> : ''}
                             <ListItem
                                 key={item.text}
                                 button
@@ -118,20 +111,29 @@ export default function Sidenav({ children }) {
                             >
                                 <ListItemIcon>{item.icon}</ListItemIcon>
                                 <ListItemText primary={item.text}> </ListItemText>
-                               
-                                
+
+
                             </ListItem>
                         ))
                     }
                     {/* <hr /> */}
-
                 </List>
 
-            </Drawer >
+            </Grid>
 
-            <div style={{ width: '100%', gap: '5px', marginTop: '90px' }}>
-                {children}
-            </div>
-        </div >
+            {/* Right Section */}
+            <Grid item xs={12} md={10}>
+                <Box
+                    sx={{
+                        padding: '16px', height: '100%'
+
+                    }}
+                >
+                    {children}
+                </Box>
+            </Grid>
+        </Grid >
+
     )
 }
+
