@@ -21,8 +21,17 @@ import { TbBellRinging } from 'react-icons/tb';
 import HelpIcon from '@mui/icons-material/Help';
 
 import img1 from '../assets/img/2.jpg'
+import StraightIcon from '@mui/icons-material/Straight';
+
+import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
+
+import HomeIcon from '@mui/icons-material/Home';
+import PaidIcon from '@mui/icons-material/Paid';
+
+import SummarizeIcon from '@mui/icons-material/Summarize';
 
 const typographyWidth = 10
+
 
 export default function Sidenav({ children }) {
 
@@ -148,11 +157,16 @@ export default function Sidenav({ children }) {
                 >
 
                     <Toolbar>
-                        <Typography sx={{ flexGrow: '1' }}> Today is the Wednesday</Typography>
+                        <Typography sx={{ marginLeft: '10px', marginTop: '20px' }}> <HomeIcon style={{ color: 'blue' }} /> Home</Typography>
+                        <Typography sx={{ marginLeft: '30px', marginTop: '20px' }}> <PaidIcon style={{ color: 'blue' }} /> Paid</Typography>
+                        <Typography sx={{ flexGrow: '1', marginLeft: '30px', marginTop: '20px' }}> <SummarizeIcon style={{ color: 'gray' }} />Unpaid</Typography>
+                        <Typography variant='h6' style={{ marginRight: '10px' }}>EN</Typography>
+                        <NotificationsNoneIcon />
+                        <p style={{ marginRight: '10px', marginTop: '15px' }}><StraightIcon /></p>
                         <Typography> Jama Abdi</Typography>
+
                         <Avatar sx={{ marginLeft: '8px', backgroundColor: 'blue' }} />
                     </Toolbar>
-
                 </AppBar>
                 <Box
                     sx={{
