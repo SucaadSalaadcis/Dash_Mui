@@ -20,6 +20,8 @@ import { GoHeartFill } from 'react-icons/go';
 import { TbBellRinging } from 'react-icons/tb';
 import HelpIcon from '@mui/icons-material/Help';
 
+import img1 from '../assets/img/2.jpg'
+
 const typographyWidth = 10
 
 export default function Sidenav({ children }) {
@@ -90,10 +92,9 @@ export default function Sidenav({ children }) {
 
                 <div>
                     <div variant='p' style={{ fontSize: '20px', paddingLeft: '20px', paddingTop: '20px' }} > Commission System </div>
-                    <Paper style={{ width: '60px', height: '60px', marginLeft: '85px', marginTop: '20px', bordr: '3px solid black' }}>
-                        {/* <Avatar sx={{ marginLeft: '8px', paddingTop: '1px' }} src='https://img.freepik.com/free-photo/international-medical-student-man-blue-uniform-doctor-with-stethoscope_1157-43732.jpg?ga=GA1.1.1454211261.1724652688&semt=ais_hybrid' /> */}
-                        <img style={{ width: '40px', height: '50px', margin: '5px 0px 0px 10px' }} src="https://img.freepik.com/free-photo/international-medical-student-man-blue-uniform-doctor-with-stethoscope_1157-43732.jpg?ga=GA1.1.1454211261.1724652688&semt=ais_hybrid" alt="" />
-                    </Paper>
+                    <Box style={{ width: '60px', height: '60px', marginLeft: '85px', marginTop: '20px', borderRadius: '6%', border: '1px solid #8396f1' }}>
+                        <img style={{ width: '40px', height: '50px', margin: '4px 0px 4px 9px', borderRadius: '6%' }} src={img1} alt="" />
+                    </Box>
                     <Typography variant='h6' style={{ margin: '10px 0px 0px 70px' }}>Jama Abdi </Typography>
                     <Typography color='text.secondary' variant='h6' style={{ margin: '1px 0px 0px 80px', }}>@Abdi </Typography>
                     <Box style={{ margin: '20px 0px 0px 48px', color: '#3a57e8', gap: '28px', display: 'flex', fontSize: '25px' }}>
@@ -149,7 +150,7 @@ export default function Sidenav({ children }) {
                     <Toolbar>
                         <Typography sx={{ flexGrow: '1' }}> Today is the Wednesday</Typography>
                         <Typography> Jama Abdi</Typography>
-                        <Avatar sx={{ marginLeft: '8px' }} src='https://img.freepik.com/free-photo/contemplated-serious-young-man-looking-camera_23-2148130297.jpg?t=st=1730279800~exp=1730283400~hmac=d8cfd9a041e024fe3b59c4078ec20aaf86fcea96d37e3750f70b9f8b7b644a9d&w=740' />
+                        <Avatar sx={{ marginLeft: '8px', backgroundColor: 'blue' }} />
                     </Toolbar>
 
                 </AppBar>

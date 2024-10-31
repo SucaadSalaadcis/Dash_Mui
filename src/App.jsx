@@ -14,7 +14,7 @@ import SignIn from "./components/SignIn"
 function App() {
   return (
     <>
-      {/* <Sidenav>
+      <Sidenav>
 
         <Routes>
           <Route path="/" element={<Dashboard />} />
@@ -25,11 +25,11 @@ function App() {
           <Route path="/users" element={<Users />} />
         </Routes>
 
-      </Sidenav> */}
-      <Routes>
+      </Sidenav>
+      {/* <Routes>
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
-      </Routes>
+      </Routes> */}
     </>
   )
 }
