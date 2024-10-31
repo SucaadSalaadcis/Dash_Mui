@@ -1,7 +1,7 @@
 
 
 import React from 'react';
-import { Typography, Box, Grid, Paper, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import { Typography, Box, Grid, Paper, List, ListItem, ListItemIcon, ListItemText, AppBar, Toolbar, Avatar } from '@mui/material';
 
 import { SubjectOutlined } from '@mui/icons-material';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -18,8 +18,9 @@ import { FaCartShopping, } from 'react-icons/fa6';
 
 import { GoHeartFill } from 'react-icons/go';
 import { TbBellRinging } from 'react-icons/tb';
+import HelpIcon from '@mui/icons-material/Help';
 
-
+const typographyWidth = 10
 
 export default function Sidenav({ children }) {
 
@@ -43,14 +44,14 @@ export default function Sidenav({ children }) {
             path: '/customers'
         },
         {
-            text: 'Orders',
-            icon: <LowPriorityOutlinedIcon color='primary' />,
-            path: '/orders'
-        },
-        {
             text: 'Products',
             icon: <MonetizationOnOutlinedIcon color='primary' />,
             path: '/products'
+        },
+        {
+            text: 'Orders',
+            icon: <LowPriorityOutlinedIcon color='primary' />,
+            path: '/orders'
         },
         {
             text: 'Users',
@@ -61,9 +62,16 @@ export default function Sidenav({ children }) {
             text: 'SignOut',
             icon: <LogoutOutlinedIcon color='primary' />,
             path: '/signout'
-        }
+        },
+        {
+            text: 'Help',
+            icon: <HelpIcon color='primary' />,
+            path: '/help'
+        },
+
 
     ]
+
 
     return (
 
@@ -71,10 +79,11 @@ export default function Sidenav({ children }) {
             {/* Left Section */}
             <Grid item xs={12} md={2}
                 style={{
-                    height: '108%',
+                    height: '130%',
                     boxShadow: '2px 5px 5px black',
-                    background: 'white'
-                    
+                    background: 'white',
+                    // overflowY: 'auto',
+
                 }}
             >
 
@@ -87,7 +96,7 @@ export default function Sidenav({ children }) {
                     </Paper>
                     <Typography variant='h6' style={{ margin: '10px 0px 0px 70px' }}>Jama Abdi </Typography>
                     <Typography color='text.secondary' variant='h6' style={{ margin: '1px 0px 0px 80px', }}>@Abdi </Typography>
-                    <Box style={{ margin: '20px 0px 0px 48px', color: 'blue', gap: '28px', display: 'flex', fontSize: '25px' }}>
+                    <Box style={{ margin: '20px 0px 0px 48px', color: '#3a57e8', gap: '28px', display: 'flex', fontSize: '25px' }}>
                         <FaCartShopping />
                         <GoHeartFill />
                         <TbBellRinging />
@@ -121,12 +130,32 @@ export default function Sidenav({ children }) {
 
             </Grid>
 
+
             {/* Right Section */}
             <Grid item xs={12} md={10}>
+                {/* app bar */}
+                <AppBar
+                    sx={{
+                        height: '10%',
+                        zIndex: '0', /* set lower z-index value */
+                        marginLeft: '7px',
+                        position: 'relative', /* position must be set for z-index to work */
+                        width: `calc(100% - ${typographyWidth}px)`, backgroundColor: 'white', color: 'black'
+                    }}
+                // elevation={0} // is the shadoww
+
+                >
+
+                    <Toolbar>
+                        <Typography sx={{ flexGrow: '1' }}> Today is the Wednesday</Typography>
+                        <Typography> Jama Abdi</Typography>
+                        <Avatar sx={{ marginLeft: '8px' }} src='https://img.freepik.com/free-photo/contemplated-serious-young-man-looking-camera_23-2148130297.jpg?t=st=1730279800~exp=1730283400~hmac=d8cfd9a041e024fe3b59c4078ec20aaf86fcea96d37e3750f70b9f8b7b644a9d&w=740' />
+                    </Toolbar>
+
+                </AppBar>
                 <Box
                     sx={{
-                        padding: '16px', height: '100%'
-
+                        padding: '16px', height: '90%',
                     }}
                 >
                     {children}

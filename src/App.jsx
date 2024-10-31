@@ -9,12 +9,12 @@ import Orders from "./pages/Orders"
 import Products from "./pages/Products"
 import Users from "./pages/Users"
 import SignIn from "./components/SignIn"
-import Reusible_data_table from "./Reusible/Reusible_data_table"
+
 
 function App() {
   return (
     <>
-      <Sidenav>
+      {/* <Sidenav>
 
         <Routes>
           <Route path="/" element={<Dashboard />} />
@@ -23,14 +23,13 @@ function App() {
           <Route path="/orders" element={<Orders />} />
           <Route path="/products" element={<Products />} />
           <Route path="/users" element={<Users />} />
-          <Route path="/reusible" element={< Reusible_data_table />} />
         </Routes>
 
-      </Sidenav>
-      {/* <Routes>
+      </Sidenav> */}
+      <Routes>
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
-      </Routes> */}
+      </Routes>
     </>
   )
 }

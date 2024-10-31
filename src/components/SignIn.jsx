@@ -1,8 +1,10 @@
 import React from 'react';
-import { TextField, Button, Checkbox, Typography, Box, Link, Grid, IconButton } from '@mui/material';
-import { Google, Facebook, Apple } from '@mui/icons-material';
+import { TextField, Button, Checkbox, Typography, Box, Link, Grid } from '@mui/material';
 
-import flower from '../assets/img/flower.png'
+
+import icon from '../assets/img/i3.png'
+import icon2 from '../assets/img/i1.png'
+
 import { FcGoogle } from 'react-icons/fc';
 import { FaFacebook } from 'react-icons/fa6';
 import { AiFillInstagram } from 'react-icons/ai';
@@ -10,37 +12,95 @@ import { TiSocialLinkedinCircular } from 'react-icons/ti';
 
 const SignIn = () => {
     return (
-        <Grid container style={{ height: '100vh', backgroundColor: '#f5f5f5' }}>
+        <Grid container sx={{ minHeight: "100vh", backgroundColor: '#f9f9f9' }}>
+
             {/* Left Section */}
             <Grid
                 item
                 xs={12}
                 md={6}
-                style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    background: 'linear-gradient(135deg, #e0f7fa, #e3f2fd)',
+                sx={{
+
+                    display: "flex",
+                    justifyContent: "start",
+                    alignItems: "center",
+                    position: "relative",
+                    overflow: "hidden",
+
                 }}
             >
+                {/* Large Half-Circle Background */}
+                {/* last */}
                 <Box
                     sx={{
-                        width: '60%',
-                        height: '60%',
-                        borderRadius: '50%',
-                        backgroundColor: '#d1eaff',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
+                        position: "absolute",
+                        width: 800,
+                        height: 800,
+                        borderRadius: "50%",
+                        bgcolor: "#f1f3fa",
+                        top: "50%",
+                        left: "-18%",
+                        transform: "translateY(-50%)",
+                    }}
+
+                />
+                {/* second */}
+                <Box
+                    sx={{
+                        position: "absolute",
+                        width: 800,
+                        height: 800,
+                        borderRadius: "50%",
+                        bgcolor: "#3a57e8",
+                        top: "50%",
+                        left: "-29.5%",
+                        transform: "translateY(-50%)",
                     }}
                 >
-                    <Typography
-                        variant="h1"
-                        style={{ color: '#2979ff', fontWeight: 'bold', fontSize: '80px' }}
-                    >
-                        <img src={flower} alt="" width={'100%'} />
-                    </Typography>
                 </Box>
+                {/* first */}
+                <Box
+                    sx={{
+                        position: "absolute",
+                        width: 800,
+                        height: 800,
+                        borderRadius: "50%",
+                        bgcolor: "#dee3f7",
+                        top: "50%",
+                        left: "-30%",
+                        transform: "translateY(-50%)",
+                    }}
+                >
+                </Box>
+
+                {/* the top thing like title and icon */}
+                <div>
+                    <Button
+                        startIcon={<img width={'20px'} src={icon2} />}
+
+                        size="large"
+                        sx={{
+                            position: 'absolute',
+                            top: '10%',
+                            left: '15%',
+                            transform: 'translate(-50%, -50%)',
+                            color: 'black',
+                            fontSize: '25px',
+                            textTransform: 'none',
+                            fontWeight: 'bold'
+                        }}
+                    >
+                        Hope UI
+                    </Button>
+                    <img src={icon} style={{
+                        zIndex: '1', /* set higher z-index value */
+                        position: 'relative', /* position must be set for z-index to work */
+                        width: '200px',
+                        height: '500px'
+                    }} alt="empty" />
+                </div>
+
+
             </Grid>
 
             {/* Right Section */}
@@ -63,10 +123,10 @@ const SignIn = () => {
                     </Typography>
 
                     {/* Email Field */}
-                    <TextField fullWidth label="Email" variant="outlined" margin="normal" type="email" placeholder="xyz@example.com"/>
+                    <TextField fullWidth label="Email" variant="outlined" margin="normal" type="email" placeholder="xyz@example.com" />
 
                     {/* Password Field */}
-                    <TextField fullWidth label="Password" variant="outlined" margin="normal" type="password"  placeholder="••••"/>
+                    <TextField fullWidth label="Password" variant="outlined" margin="normal" type="password" placeholder="••••" />
 
                     {/* Remember Me Checkbox and Forgot Password Link */}
                     <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '8px' }}>
@@ -80,7 +140,7 @@ const SignIn = () => {
                     </Box>
 
                     {/* Sign In Button */}
-                    <Button fullWidth size="large" variant='contained' sx={{ mt: '10px', textTransform: 'none' }}>Sign In</Button>
+                    <Button  size="large" variant='contained' sx={{ mt: '10px', textTransform: 'none', marginLeft: '120px'}}>Sign In</Button>
 
                     {/* Divider */}
                     <Typography
@@ -110,6 +170,7 @@ const SignIn = () => {
                     </Typography>
                 </Box>
             </Grid>
+
         </Grid>
     );
 };

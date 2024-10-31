@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import $ from 'jquery';
 import 'datatables.net-bs5'; // Bootstrap 5 DataTables
 import 'datatables.net-responsive-bs5'; // Responsive DataTables
+import { Edit } from '@mui/icons-material';
 
 const ReusableDataTable = ({ columns, data, options = {} }) => {
     const tableRef = useRef(null);
@@ -25,13 +26,18 @@ const ReusableDataTable = ({ columns, data, options = {} }) => {
         };
     }, [columns, data, options]);
 
+
+
     return (
         <div className="container mt-4">
             <table
                 ref={tableRef}
                 className="table table-striped table-bordered"
                 style={{ width: '100%' }}
-            ></table>
+            
+            >
+            
+            </table>
         </div>
     );
 };
